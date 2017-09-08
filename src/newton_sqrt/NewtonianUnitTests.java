@@ -8,7 +8,7 @@ import static org.junit.Assert.assertEquals;
  * Created by davidshinabarger on 9/7/17.
  */
 
-public class newtonianUnitTests {
+public class NewtonianUnitTests {
 
     @Test
     public void firstTest() {
