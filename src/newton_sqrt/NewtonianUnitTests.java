@@ -24,4 +24,11 @@ public class NewtonianUnitTests {
         assertEquals(expected, actual, 0.000001);
     }
 
+    @Test
+    public void newtonianSquareRootReturnsTheCorrectNumber() {
+        double expected = 14.142135623730955 ;
+        double actual = GetNewtonsMethod.getNewtonSquareRoot(200);
+        assertEquals(expected, actual, 0.000001);
+    }
+
 }
