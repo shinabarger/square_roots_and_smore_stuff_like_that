@@ -36,7 +36,7 @@ public class GetNewtonsMethod {
 
         while (accuracy > 0.0000001) {
             guess = (userNumber / guess + guess) / 2;
-            System.out.println(guess);
+            //System.out.println(guess);
             accuracy = Math.abs(guess - userNumber / guess);
         }
 

@@ -31,4 +31,11 @@ public class NewtonianUnitTests {
         assertEquals(expected, actual, 0.000001);
     }
 
+    @Test
+    public void normalSquareRootOf200IsCorrect() {
+        double expected = 14.142135623730951 ;
+        double actual = GetNewtonsMethod.getSquareRoot(200);
+        assertEquals(expected, actual, 0.000001);
+    }
+
 }
