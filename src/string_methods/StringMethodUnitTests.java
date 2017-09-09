@@ -52,4 +52,11 @@ public class StringMethodUnitTests {
         assertEquals(expected, actual);
     }
 
+    @Test
+    public void countUpperCaseLettersReturns2() {
+        int expected = 2 ;
+        int actual = MyStringMethods.countUpperCaseLetters("SA");
+        assertEquals(expected, actual);
+    }
+
 }
