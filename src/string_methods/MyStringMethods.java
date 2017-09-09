@@ -47,16 +47,24 @@ public class MyStringMethods {
             }
         }
 
-
-
         return numberOfOccurencesOfS;
     }
 
-    int countOccurrences(char c) {
+    static int countOccurrences(char characterInput) {
         // use indexOf and return the number of occurrences of the character "c" in "myStr"
-        int numberOfOccurancesOfC = 0;
+        // there is no indexOf for character in the java documentation. Is this a trick question? https://docs.oracle.com/javase/7/docs/api/java/lang/Character.html
+        // We'll just turn the character into a string so we can see what letter it is using indexOf
+        // also worth noting - having two different methods with the SAME name with DIFFERENT variables as parameters is not best practice
 
-        return numberOfOccurancesOfC;
+        String checkThisLetter = String.valueOf(characterInput);
+
+        int numberOfOccurrencesOfC = 0;
+        int locationOfC = checkThisLetter.indexOf('c');
+        if (locationOfC >= 0) {
+            numberOfOccurrencesOfC++;
+        }
+
+        return numberOfOccurrencesOfC;
     }
 
     int countUpperCaseLetters() {

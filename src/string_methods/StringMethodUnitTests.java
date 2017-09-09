@@ -24,4 +24,18 @@ public class StringMethodUnitTests {
         assertEquals(expected, actual);
     }
 
+    @Test
+    public void seeIfThreeSsReturnTheNumberThree() {
+        int expected = 3;
+        int actual = MyStringMethods.countOccurrences("sss");
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void seeIfsReturns1ForCharacter() {
+        int expected = 1;
+        int actual = MyStringMethods.countOccurrences('c');
+        assertEquals(expected, actual);
+    }
+
 }
