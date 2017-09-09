@@ -7,10 +7,13 @@ import java.util.Scanner;
  */
 public class MyStringMethods {
 
-    private String myString = "";
+    private static String myString = "";
+
 
     public static void main(String[] args) {
         MyStringMethods myStringMethods = new MyStringMethods();
+
+
 
         myStringMethods.readString();
         myStringMethods.printCounts("big", 'a');
@@ -21,6 +24,25 @@ public class MyStringMethods {
         MyStringMethods myStringMethods2 = new MyStringMethods();
         myStringMethods2.setString("the elephant in the room wouldn't budge");
         myStringMethods2.printCounts("the", 'i');
+    }
+
+    static int countUpperCaseLetters(String myString) {
+        // return the number of upper case letters in "myStr"
+        int numberOfUpperCaseLetters = 0;
+        for (int i = 0; i < myString.length(); i++) {
+            if (Character.isUpperCase(myString.charAt(i))) numberOfUpperCaseLetters++;
+        }
+        return numberOfUpperCaseLetters;
+    }
+
+    static int countLowerCaseLetters(String myString) {
+        // return the number of lower case letters in "myStr"
+        int numberOfLowerCaseLetters = 0;
+        for (int i = 0; i < myString.length(); i++) {
+            if (Character.isLowerCase(myString.charAt(i))) numberOfLowerCaseLetters++;
+        }
+
+        return numberOfLowerCaseLetters;
     }
 
     static int countOccurrences(String userString) {
@@ -56,43 +78,27 @@ public class MyStringMethods {
         return numberOfOccurrencesOfC;
     }
 
-    void readString() {
+    String readString() {
         // Prompt the user and read in a String from a Scanner class from the keyboard
         // with the nextLine() method and store it in "myStr"
         Scanner scan = new Scanner(System.in);
+
+        System.out.println("Enter in the desired String: ");
         String myString = scan.nextLine();
+        return myString;
     }
 
     void setString(String string) {
         myString = string;
     }
 
-    static int countUpperCaseLetters(String myString) {
-        // return the number of upper case letters in "myStr"
-        int numberOfUpperCaseLetters = 0;
-        for (int i = 0; i < myString.length(); i++) {
-            if (Character.isUpperCase(myString.charAt(i))) numberOfUpperCaseLetters++;
-        }
-        return numberOfUpperCaseLetters;
-    }
-
-    static int countLowerCaseLetters(String myString) {
-        // return the number of lower case letters in "myStr"
-        int numberOfLowerCaseLetters = 0;
-        for (int i = 0; i < myString.length(); i++) {
-            if (Character.isLowerCase(myString.charAt(i))) numberOfLowerCaseLetters++;
-        }
-
-        return numberOfLowerCaseLetters;
-    }
-
-    void printCounts(String string, char character) {
+    public void printCounts(String s, char c) {
         System.out.println("***************************************");
         System.out.println("Analyzing: myStr=" + myString);
-        System.out.println("Number of Upper case letters=" + countUpperCaseLetters(string));
-        System.out.println("Number of Lower case letters=" + countLowerCaseLetters(string));
-        System.out.println("Number of " + string + " is " + countOccurrences(string));
-        System.out.println("Number of " + character + " is " + countOccurrences(character));
+        System.out.println("Number of Upper case letters=" + countUpperCaseLetters(s));
+        System.out.println("Number of Lower case letters=" + countLowerCaseLetters(s));
+        System.out.println("Number of " + s + " is " + countOccurrences(s));
+        System.out.println("Number of " + c + " is " + countOccurrences(c));
     }
 }
 

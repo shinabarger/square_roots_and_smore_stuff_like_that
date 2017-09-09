@@ -48,14 +48,14 @@ public class StringMethodUnitTests {
     @Test
     public void countUpperCaseLettersReturns1() {
         int expected = 1 ;
-        int actual = MyStringMethods.countUpperCaseLetters("S");
+        int actual = MyStringMethods.countUpperCaseLetters("A");
         assertEquals(expected, actual);
     }
 
     @Test
     public void countUpperCaseLettersReturns2() {
         int expected = 2 ;
-        int actual = MyStringMethods.countUpperCaseLetters("SA");
+        int actual = MyStringMethods.countUpperCaseLetters("AB");
         assertEquals(expected, actual);
     }
 
