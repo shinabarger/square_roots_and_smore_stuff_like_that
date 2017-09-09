@@ -31,6 +31,12 @@ public class StringMethodUnitTests {
         assertEquals(expected, actual);
     }
 
+    @Test
+    public void seeIfcReturns1ForCharacter() {
+        int expected = 1;
+        int actual = MyStringMethods.countOccurrences('c');
+        assertEquals(expected, actual);
+    }
 
     @Test
     public void seeIfsReturns0ForCharacter() {
@@ -39,6 +45,19 @@ public class StringMethodUnitTests {
         assertEquals(expected, actual);
     }
 
+    @Test
+    public void countUpperCaseLettersReturns1() {
+        int expected = 1 ;
+        int actual = MyStringMethods.countUpperCaseLetters("A");
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void countUpperCaseLettersReturns2() {
+        int expected = 2 ;
+        int actual = MyStringMethods.countUpperCaseLetters("AB");
+        assertEquals(expected, actual);
+    }
 
     @Test
     public void countLowerCaseLettersReturns1() {

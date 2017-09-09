@@ -1,5 +1,6 @@
 package string_methods;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -23,19 +24,6 @@ public class MyStringMethods {
         myStringMethods2.printCounts("the", 'i');
     }
 
-    void readString() {
-        // Prompt the user and read in a String from a Scanner class from the keyboard
-        // with the nextLine() method and store it in "myStr"
-        Scanner scan = new Scanner(System.in);
-
-        System.out.println("Enter in the desired String: ");
-        myString = scan.nextLine();
-    }
-
-    void setString(String string) {
-        myString = string;
-    }
-
     static int countUpperCaseLetters(String s) {
         // return the number of upper case letters in "myStr"
         int numberOfUpperCaseLetters = 0;
@@ -56,18 +44,18 @@ public class MyStringMethods {
         return numberOfLowerCaseLetters;
     }
 
-    static int countOccurrences(String userString) {
+    static int countOccurrences(String s) {
         // use indexOf and return the number of occurrences of the string "s" in "myStr"
         // I have no idea why you would want to use indexOf to check if a string contains s instead of many different options
         // this for loop is wildly complicated and confusing. this problem has been solved lots over at https://stackoverflow.com/a/1816989/6679563
         int numberOfOccurencesOfS = 0;
+        ArrayList<Integer> numberOfTimes = new ArrayList<>();
 
-        for (int i = 0; i < userString.length(); i++) {
-            int locatioOfS = userString.indexOf('s');
-            if (locatioOfS >= 0) {
-                numberOfOccurencesOfS++;
-            }
+        for (int i = myString.indexOf(s); i >= 0; i = myString.indexOf(s, i + 1)) {
+            numberOfTimes.add(i);
         }
+
+        numberOfOccurencesOfS = numberOfTimes.size();
 
         return numberOfOccurencesOfS;
     }
@@ -79,15 +67,31 @@ public class MyStringMethods {
         // also worth noting - having two different methods with the SAME name with DIFFERENT variables as parameters is not best practice
 
         int numberOfOccurrencesOfC = 0;
-        int locationOfC = myString.indexOf('c');
-        if (locationOfC >= 0) {
-            numberOfOccurrencesOfC++;
+        int locationOfC = myString.indexOf(characterInput);
+
+        ArrayList<Integer> numberOfTimes = new ArrayList<>();
+
+        for (int i = myString.indexOf(characterInput); i >= 0; i = myString.indexOf(characterInput, i + 1)) {
+            numberOfTimes.add(i);
         }
+
+        numberOfOccurrencesOfC = numberOfTimes.size();
 
         return numberOfOccurrencesOfC;
     }
 
+    void readString() {
+        // Prompt the user and read in a String from a Scanner class from the keyboard
+        // with the nextLine() method and store it in "myStr"
+        Scanner scan = new Scanner(System.in);
 
+        System.out.println("Enter in the desired String: ");
+        myString = scan.nextLine();
+    }
+
+    void setString(String string) {
+        myString = string;
+    }
 
     public void printCounts(String s, char c) {
         System.out.println("***************************************");
