@@ -23,9 +23,23 @@ public class MyStringMethods {
         myStringMethods2.printCounts("the", 'i');
     }
 
-    static int countUpperCaseLetters(String myString) {
+    void readString() {
+        // Prompt the user and read in a String from a Scanner class from the keyboard
+        // with the nextLine() method and store it in "myStr"
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("Enter in the desired String: ");
+        myString = scan.nextLine();
+    }
+
+    void setString(String string) {
+        myString = string;
+    }
+
+    static int countUpperCaseLetters(String s) {
         // return the number of upper case letters in "myStr"
         int numberOfUpperCaseLetters = 0;
+
         for (int i = 0; i < myString.length(); i++) {
             if (Character.isUpperCase(myString.charAt(i))) numberOfUpperCaseLetters++;
         }
@@ -64,10 +78,8 @@ public class MyStringMethods {
         // We'll just turn the character into a string so we can see what letter it is using indexOf
         // also worth noting - having two different methods with the SAME name with DIFFERENT variables as parameters is not best practice
 
-        String checkThisLetter = String.valueOf(characterInput);
-
         int numberOfOccurrencesOfC = 0;
-        int locationOfC = checkThisLetter.indexOf('c');
+        int locationOfC = myString.indexOf('c');
         if (locationOfC >= 0) {
             numberOfOccurrencesOfC++;
         }
@@ -75,19 +87,7 @@ public class MyStringMethods {
         return numberOfOccurrencesOfC;
     }
 
-    String readString() {
-        // Prompt the user and read in a String from a Scanner class from the keyboard
-        // with the nextLine() method and store it in "myStr"
-        Scanner scan = new Scanner(System.in);
 
-        System.out.println("Enter in the desired String: ");
-        myString = scan.nextLine();
-        return myString;
-    }
-
-    void setString(String string) {
-        myString = string;
-    }
 
     public void printCounts(String s, char c) {
         System.out.println("***************************************");
