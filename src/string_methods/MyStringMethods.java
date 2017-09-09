@@ -23,17 +23,6 @@ public class MyStringMethods {
         myStringMethods2.printCounts("the", 'i');
     }
 
-    void readString() {
-        // Prompt the user and read in a String from a Scanner class from the keyboard
-        // with the nextLine() method and store it in "myStr"
-        Scanner scan = new Scanner(System.in);
-        String myString = scan.nextLine();
-    }
-
-    void setString(String string) {
-        myString = string;
-    }
-
     static int countOccurrences(String userString) {
         // use indexOf and return the number of occurrences of the string "s" in "myStr"
         // I have no idea why you would want to use indexOf to check if a string contains s instead of many different options
@@ -42,7 +31,7 @@ public class MyStringMethods {
 
         for (int i = 0; i < userString.length(); i++) {
             int locatioOfS = userString.indexOf('s');
-            if (locatioOfS >= 0 ) {
+            if (locatioOfS >= 0) {
                 numberOfOccurencesOfS++;
             }
         }
@@ -65,6 +54,17 @@ public class MyStringMethods {
         }
 
         return numberOfOccurrencesOfC;
+    }
+
+    void readString() {
+        // Prompt the user and read in a String from a Scanner class from the keyboard
+        // with the nextLine() method and store it in "myStr"
+        Scanner scan = new Scanner(System.in);
+        String myString = scan.nextLine();
+    }
+
+    void setString(String string) {
+        myString = string;
     }
 
     int countUpperCaseLetters() {
