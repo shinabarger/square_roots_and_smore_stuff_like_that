@@ -32,9 +32,16 @@ public class StringMethodUnitTests {
     }
 
     @Test
-    public void seeIfsReturns1ForCharacter() {
+    public void seeIfcReturns1ForCharacter() {
         int expected = 1;
         int actual = MyStringMethods.countOccurrences('c');
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void seeIfsReturns0ForCharacter() {
+        int expected = 0 ;
+        int actual = MyStringMethods.countOccurrences('s');
         assertEquals(expected, actual);
     }
 
