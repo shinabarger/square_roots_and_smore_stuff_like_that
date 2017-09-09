@@ -6,6 +6,8 @@ import static org.junit.Assert.assertEquals;
 
 /**
  * Created by davidshinabarger on 9/7/17.
+ *
+ * Many of these tests simply will not work due to how the code is being forced to run. Bummer, but that's just how it goes when you use GLOBAL variables. Gross!
  */
 
 public class StringMethodUnitTests {
