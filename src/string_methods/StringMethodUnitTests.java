@@ -59,4 +59,12 @@ public class StringMethodUnitTests {
         assertEquals(expected, actual);
     }
 
+    @Test
+    public void countLowerCaseLettersReturns1() {
+        int expected = 1 ;
+        int actual = MyStringMethods.countLowerCaseLetters("a");
+        assertEquals(expected, actual);
+    }
+
+
 }

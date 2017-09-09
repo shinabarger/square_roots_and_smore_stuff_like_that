@@ -79,6 +79,9 @@ public class MyStringMethods {
     static int countLowerCaseLetters(String myString) {
         // return the number of lower case letters in "myStr"
         int numberOfLowerCaseLetters = 0;
+        for (int i = 0; i < myString.length(); i++) {
+            if (Character.isLowerCase(myString.charAt(i))) numberOfLowerCaseLetters++;
+        }
 
         return numberOfLowerCaseLetters;
     }
