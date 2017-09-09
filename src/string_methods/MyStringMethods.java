@@ -9,11 +9,8 @@ public class MyStringMethods {
 
     private static String myString = "";
 
-
     public static void main(String[] args) {
         MyStringMethods myStringMethods = new MyStringMethods();
-
-
 
         myStringMethods.readString();
         myStringMethods.printCounts("big", 'a');
@@ -84,7 +81,7 @@ public class MyStringMethods {
         Scanner scan = new Scanner(System.in);
 
         System.out.println("Enter in the desired String: ");
-        String myString = scan.nextLine();
+        myString = scan.nextLine();
         return myString;
     }
 
@@ -95,8 +92,8 @@ public class MyStringMethods {
     public void printCounts(String s, char c) {
         System.out.println("***************************************");
         System.out.println("Analyzing: myStr=" + myString);
-        System.out.println("Number of Upper case letters=" + countUpperCaseLetters(s));
-        System.out.println("Number of Lower case letters=" + countLowerCaseLetters(s));
+        System.out.println("Number of Upper case letters=" + countUpperCaseLetters(myString));
+        System.out.println("Number of Lower case letters=" + countLowerCaseLetters(myString));
         System.out.println("Number of " + s + " is " + countOccurrences(s));
         System.out.println("Number of " + c + " is " + countOccurrences(c));
     }
