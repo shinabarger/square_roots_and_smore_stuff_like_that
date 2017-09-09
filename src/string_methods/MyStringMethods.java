@@ -67,14 +67,16 @@ public class MyStringMethods {
         myString = string;
     }
 
-    int countUpperCaseLetters() {
+    static int countUpperCaseLetters(String myString) {
         // return the number of upper case letters in "myStr"
         int numberOfUpperCaseLetters = 0;
-
+        for (int i = 0; i < myString.length(); i++) {
+            if (Character.isUpperCase(myString.charAt(i))) numberOfUpperCaseLetters++;
+        }
         return numberOfUpperCaseLetters;
     }
 
-    int countLowerCaseLetters() {
+    static int countLowerCaseLetters(String myString) {
         // return the number of lower case letters in "myStr"
         int numberOfLowerCaseLetters = 0;
 
@@ -84,10 +86,8 @@ public class MyStringMethods {
     void printCounts(String string, char character) {
         System.out.println("***************************************");
         System.out.println("Analyzing: myStr=" + myString);
-        System.out.println("Number of Upper case letters=" +
-                countUpperCaseLetters());
-        System.out.println("Number of Lower case letters=" +
-                countLowerCaseLetters());
+        System.out.println("Number of Upper case letters=" + countUpperCaseLetters(string));
+        System.out.println("Number of Lower case letters=" + countLowerCaseLetters(string));
         System.out.println("Number of " + string + " is " + countOccurrences(string));
         System.out.println("Number of " + character + " is " + countOccurrences(character));
     }
