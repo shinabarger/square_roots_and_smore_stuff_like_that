@@ -10,36 +10,29 @@ public class TooMuchInMain {
         int answer;
         char operator = 'q';
         boolean keepCalculating = true;
+        int whichNumber = 0;
+
 
         while (keepCalculating) {
-            //*************************************************
-            // This next block will get the user desired operator. getOperator should contain the following logic
 
             operator = doCalculation(scan, operator);
 
-            // At this point operator contains a proper operator chosen by the user. This will show up in doCalculation
             if (operator == 'q') {
                 break;
             }
 
-            //***********************************************
-            // Now get operand 1
-            // getOperand() will get the next hunk of logic
-            //***********************************************
-            int which = 1;
-            System.out.println("Enter operand " + which);
-            String input;
+            whichNumber = 1;
+            System.out.println("Enter operand " + whichNumber);
+            String userInput;
+            userInput = getOperandAndValidateThatItIsAValidNumber(scan);
 
-            input = getOperand(scan);
+            operand1 = Integer.parseInt(userInput);
 
-            operand1 = Integer.parseInt(input);
+            whichNumber = 2;
+            System.out.println("Enter operand " + whichNumber);
+            userInput = getOperandAndValidateThatItIsAValidNumber(scan);
 
-            which = 2;
-            System.out.println("Enter operand " + which);
-
-            input = getOperand(scan);
-
-            operand2 = Integer.parseInt(input);
+            operand2 = Integer.parseInt(userInput);
 
             answer = doArithmetic(operand1, operand2, operator);
 
@@ -103,7 +96,7 @@ public class TooMuchInMain {
         return answer;
     }
 
-    private static String getOperand(Scanner scan) {
+    private static String getOperandAndValidateThatItIsAValidNumber(Scanner scan) {
         boolean operand_is_bad;
         String input;
         do {
